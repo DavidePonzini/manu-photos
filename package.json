@@ -1,19 +1,17 @@
 {
   "name": "manu-photos",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DavidePonzini/manu-photos.git"
-  },
-  "author": "Davide Ponzini",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DavidePonzini/manu-photos/issues"
-  },
-  "homepage": "https://github.com/DavidePonzini/manu-photos#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "exif-parser": "^0.1.12",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
+  }
 }
