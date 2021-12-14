@@ -52,6 +52,6 @@ function addMarker(lat, lng) {
     });
 }
 
-function read_dir(dir) {
+function read_locations() {
   
 }
