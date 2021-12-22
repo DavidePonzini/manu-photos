@@ -17,15 +17,18 @@ def exiftool_execute(exiftool, command: str, file: str):
 
 def write_gps_coords(executable, file, lat, lng):
     with exiftool.ExifTool(executable) as et:
-        exiftool_execute(et, '-GPSLongitude={}'.format(lng), file)
+        exiftool_execute(et, '-GPSLatitudeRef=N', file)
         exiftool_execute(et, '-GPSLatitude={}'.format(lat), file)
+        
+        exiftool_execute(et, '-GPSLongitudeRef=E', file)
+        exiftool_execute(et, '-GPSLongitude={}'.format(lng), file)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('lat', type=float)
-    parser.add_argument('lng', type=float)
-    parser.add_argument('files', type=str, nargs='+')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('lat', type=float, help="Latitude coordinates")
+    parser.add_argument('lng', type=float, help="Longitude coordinates")
+    parser.add_argument('files', type=str, nargs='+', help="Files to apply the coordinates to")
     
     args = parser.parse_args()
 
