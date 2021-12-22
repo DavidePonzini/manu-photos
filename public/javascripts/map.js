@@ -81,13 +81,22 @@ function createMarker(photo) {
 
 
 function showPhotos(photos) {
-  let gallery = $('#gallery')
+  let preview = $('#gallery-preview')
+  let imgBig = $('#gallery-img-big');
+
+  preview.empty();
+  imgBig.attr("src", '');
 
   photos.forEach(photo => {
-    let img = $('<img>').attr("src", `/photos/${photo.filename}`);
+    let img = $('<img class="w-100 shadow-1-strong rounded mt-2 mb-2">');
+    img.attr("src", `/photos/${photo.filename}`);
 
-    gallery.append(img);
+    img.on('click', () => {
+      imgBig.attr("src", `/photos/${photo.filename}`);
+    })
+    
+    preview.append(img);
   })
 
-  gallery.show();
+  $('#gallery').show();
 }

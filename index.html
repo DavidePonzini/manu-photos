@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
   </head>
   <body>
-    <div id="gallery"></div>
+    <!-- Gallery -->
+    <div class="modal" id="gallery">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title">Galleria</h5>
+            <button type="button" class="btn-close" onclick="$('#gallery').hide()"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row">
+              <!-- Previews -->
+              <div class="col-2" id="gallery-preview"></div>
+              
+              <!-- Big picture -->
+              <div class="col-10">
+                <img id="gallery-img-big" class="shadow-1-strong rounded"/>
+              </div>
+            </div>
+          </div>            
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="$('#gallery').hide()">Chiudi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
     <div id="map"></div>
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Map -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
